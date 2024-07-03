@@ -1,0 +1,11 @@
+[package]
+name = "do_or_die"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+colored = "2.1.0"
+chrono = "0.4.38"
+unicode-segmentation = "1.11.0"
+serde_json = "1.0.120"
+serde = {version = "1.0.120", features = ["derive"]} 
