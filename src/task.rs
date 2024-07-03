@@ -56,9 +56,9 @@ impl std::fmt::Display for Task {
         let due = self.due.to_string().yellow().on_bright_black().to_string();
 
         if today > self.due {
-            description = format!("{:<DESC_WIDTH$}", description.green().on_black());
-        } else if today < self.due {
             description = format!("{:<DESC_WIDTH$}", description.red().on_black());
+        } else if today < self.due {
+            description = format!("{:<DESC_WIDTH$}", description.green().on_black());
         } else {
             description = format!("{:<DESC_WIDTH$}", description.blue().on_black());
         }
