@@ -19,9 +19,9 @@ impl SaveData {
     }
 }
 
-#[derive(Debug)]
+#[derive(Debug, PartialEq)]
 pub struct Task {
-    description: String,
+    pub description: String,
     pub due: NaiveDate,
 }
 

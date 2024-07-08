@@ -16,6 +16,15 @@ impl Coordinator {
         self.tasks.push(task);
     }
 
+    pub fn del_task(&mut self, position: usize) {
+        self.tasks.remove(position);
+        // self.tasks.retain(|item| item != task);
+    }
+
+    pub fn get_position(&self, task: &Task) -> Option<usize> {
+        self.tasks.iter().position(|x| x == task)
+    }
+
     pub fn get_tasks(&self) -> Vec<&Task> {
         let mut tasks: Vec<&Task> = self.tasks.iter().collect();
         tasks.sort_by(|a, b| b.due.cmp(&a.due));
