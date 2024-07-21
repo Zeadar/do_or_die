@@ -33,7 +33,8 @@ fn main() {
     main_menu(&mut coordinator, &mut current_view);
 
     let mut file = std::fs::File::create(path).unwrap();
-    file.write_all(coordinator.serialize().as_bytes()).unwrap();
+    file.write_all(format!("{}\n", coordinator.serialize()).as_bytes())
+        .unwrap();
 }
 
 fn main_menu(coordinator: &mut accounter::Coordinator, current_view: &mut NaiveDate) {
